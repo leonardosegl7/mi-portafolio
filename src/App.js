@@ -71,7 +71,7 @@ const Portfolio = () => {
               key={index}
               onClick={() => setCurrentPhoto(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentPhoto
-                ? 'bg-orange-400 scale-110'
+                ? 'bg-teal-400 scale-110'
                 : 'bg-gray-400 hover:bg-gray-300'
                 }`}
             />
@@ -196,14 +196,14 @@ const Portfolio = () => {
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-orange-900 to-slate-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-800 to-slate-900 text-white">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-lg z-50 border-b border-white/10" style={{ height: `${NAVBAR_HEIGHT}px` }}>
         <div className="mx-auto px-4 h-full">
           <div className="flex justify-between items-center h-full">
             {/* Logo/Nombre */}
-            <div className="text-xl font-bold bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
-              Leonardo             
+            <div className="text-xl font-bold bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">
+              Leonardo
               {/* <img src="L.png" className='w-8 h-8' /> */}
             </div>
 
@@ -211,7 +211,7 @@ const Portfolio = () => {
             <div className="hidden md:flex items-center space-x-8">
               {[
                 { id: 'inicio', label: 'Inicio' },
-                { id: 'sobre-mi', label: 'Sobre Mí' },
+                { id: 'sobre-mi', label: 'Sobre mí' },
                 { id: 'tecnologias', label: 'Tecnologías' },
                 { id: 'proyectos', label: 'Proyectos' },
                 { id: 'contacto', label: 'Contacto' }
@@ -219,15 +219,15 @@ const Portfolio = () => {
                 <button
                   key={id}
                   onClick={() => scrollToSection(id)}
-                  className={`hover:text-orange-400 transition-all duration-300 relative py-2 ${activeSection === id
-                    ? 'text-orange-400'
+                  className={`hover:text-teal-400 transition-all duration-300 relative py-2 ${activeSection === id
+                    ? 'text-teal-400'
                     : 'text-gray-300 hover:text-white'
                     }`}
                 >
                   {label}
                   {/* Indicador activo */}
                   {activeSection === id && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-teal-400 to-blue-400 rounded-full"></div>
                   )}
                 </button>
               ))}
@@ -236,7 +236,7 @@ const Portfolio = () => {
               <div className="relative cv-select-container">
                 <button
                   onClick={() => setIsSelectOpen(!isSelectOpen)}
-                  className="flex items-center px-4 py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-full hover:from-orange-600 hover:to-amber-600 transition-all duration-300 font-medium hover:scale-105 min-w-[140px] justify-between"
+                  className="flex items-center px-4 py-2 bg-gradient-to-r from-teal-500 to-blue-500 text-white rounded-full hover:from-teal-600 hover:to-blue-600 transition-all duration-300 font-medium hover:scale-105 min-w-[140px] justify-between"
                 >
                   <div className="flex items-center">
                     <Download className="w-4 h-4 mr-2" />
@@ -252,7 +252,7 @@ const Portfolio = () => {
                       <button
                         key={option.value}
                         onClick={() => handleDownloadCV(option.value)}
-                        className="w-full px-4 py-3 text-left hover:bg-orange-500/20 transition-all duration-200 flex items-center space-x-3 text-white hover:text-orange-300 border-b border-white/10 last:border-b-0"
+                        className="w-full px-4 py-3 text-left hover:bg-teal-500/20 transition-all duration-200 flex items-center space-x-3 text-white hover:text-teal-300 border-b border-white/10 last:border-b-0"
                       >
                         <span className="text-lg">{option.flag}</span>
                         <span className="flex-1">{option.label}</span>
@@ -269,34 +269,46 @@ const Portfolio = () => {
 
       {/* Hero Section */}
       <section id="inicio" className="min-h-screen flex items-center relative overflow-hidden" style={{ paddingTop: `${NAVBAR_HEIGHT}px` }}>
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-amber-500/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 to-blue-500/5"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Introducción - Lado Izquierdo */}
             <div className="text-left">
               <p className="text-2xl text-gray-300 mb-4">Hola, yo soy</p>
-              <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400 bg-clip-text text-transparent">
+              <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-400 via-blue-400 to-slate-400 bg-clip-text text-transparent">
                 Leonardo
               </h1>
-              <h2 className="text-2xl md:text-3xl text-orange-400 mb-8">
+              <h2 className="text-2xl md:text-3xl text-teal-400 mb-8">
                 Desarrollador Web
               </h2>
-              <button className="px-8 py-3 border border-orange-500 text-orange-400 rounded-full hover:bg-orange-500 hover:text-white transition-all duration-300 mb-8">
+              {/* <button className="px-8 py-3 border border-teal-500 text-teal-400 rounded-full hover:bg-teal-500 hover:text-white transition-all duration-300 mb-8">
                 Disponible para contratación
-              </button>
+              </button> */}
               <p className="text-lg text-gray-300 max-w-lg leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ab vitae quidem minima sapiente quis! Laudantium eligendi consequuntur modi earum dolorem odio laborum quam tempora! Nostrum eaque doloribus beatae voluptate!
+                Egresado en Ingeniería en Sistemas Computacionales,
+                con la especialidad de Tecnologías de la Nube, con una sólida ética de trabajo.
+                Soy una persona empática, responsable y ordenada, lo que facilita la colaboración efectiva en equipos de trabajo.
+                Apasionado por el aprendizaje continuo y siempre abierto a adquirir nuevos conocimientos y habilidades para mejorar en mi
+                campo.
               </p>
             </div>
-            {/* Foto - Lado Derecho */}
+            {/* Foto - Lado Derecho con marco discreto para PNG sin fondo */}
             <div className="flex justify-center md:justify-end">
-              <div className="w-[500px] h-96 bg-gradient-to-r from-orange-500 to-blue-500 p-1 shadow-2xl">
-                {/* AQUÍ PONES TU FOTO - Reemplaza este div con tu imagen */}
-                <div className="w-full h-full bg-gray-300 flex items-center justify-center text-8xl overflow-hidden">
+              <div className="relative group">
+                {/* Marco con sombra sutil */}
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-400/10 to-blue-400/10 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
+
+                {/* Contenedor de la imagen */}
+                <div className="relative w-[400px] h-[480px] rounded-3xl border border-white/10 bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm overflow-hidden shadow-2xl group-hover:shadow-teal-500/10 transition-all duration-500">
+                  {/* Imagen PNG sin fondo */}
                   <img
-                    src="tralalerotralala.jpg"
-                    className="w-full h-full object-cover"
+                    src="Sinfondoleo.png"
+                    alt="Leonardo - Desarrollador Web"
+                    className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
                   />
+
+                  {/* Brillo sutil en hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
               </div>
             </div>
@@ -304,30 +316,42 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/************************************************************ Sobre Mí ************************************************************/}
+      {/************************************************************ Sobre mí ************************************************************/}
       <section id="sobre-mi" className="py-10 relative" style={{ scrollMarginTop: `${NAVBAR_HEIGHT}px` }}>
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
-            Sobre Mí
+          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">
+            Sobre mí
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Carrusel de fotos */}
             <PhotoCarousel />
             <div>
-              <h3 className="text-2xl font-semibold mb-6 text-orange-400">Mi Historia</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos officia officiis, iste recusandae corrupti, corporis vitae debitis voluptatibus ipsam voluptate vero animi error aliquid? Eligendi impedit eius recusandae odio!</p>
+              <h3 className="text-2xl font-semibold mb-6 text-teal-400">Acerca de mí</h3>
+              <p>Me llamo Leonardo, tengo 24 años, soy originario de Morelia y egresado de la carrera de Ingeniería en Sistemas Computacionales en el Tecnológico de Morelia. También estudié Soporte y Mantenimiento de Cómputo en el CONALEP Morelia II.
+                A lo largo de mi formación me he especializado en el desarrollo de software, trabajando con diversas tecnologías. Tengo un buen nivel de inglés. Adaptabilidad con facilidad a distintos lenguajes de programación, trabajo en equipo de manera eficaz.
+                {/* Actualmente, estoy en busca de un lugar donde pueda aportar mis habilidades y continuar desarrollándome profesionalmente. */}
+              </p>
               <p className="text-gray-300 mb-6">
               </p>
-              <h3 className="text-2xl font-semibold mb-6 text-orange-400">Habilidades</h3>
-              <ul className="text-gray-300 mb-6 list-disc list-inside">
-                <li>Inglés Intermedio</li>
-                <li>Buena comunicación</li>
-                <li>Puntual</li>
-                <li>Integral</li>
-                <li>Bootstrap</li>
-              </ul>
+              <h3 className="text-2xl font-semibold mb-6 text-teal-400">Habilidades/Aptitudes</h3>
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <ul className="text-gray-300 mb-6 list-disc list-inside">
+                  <li>Inglés B2</li>
+                  <li>Buena comunicación</li>
+                  <li>Puntual</li>
+                  <li>Integral</li>
+                  <li>Bootstrap</li>
+                </ul>
+                <ul className="text-gray-300 mb-6 list-disc list-inside">
+                  <li>Rapido aprendizaje</li>
+                  <li>Trabajo en equipo</li>
+                  <li>Adaptabilidad</li>
+                  <li>Positividad</li>
+                  <li>Creatividad</li>
+                  <li></li>
+                </ul>
+              </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -335,7 +359,7 @@ const Portfolio = () => {
       {/* Technologies Section */}
       <section id="tecnologias" className="py-10 bg-black/20" style={{ scrollMarginTop: `${NAVBAR_HEIGHT}px` }}>
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">
             Tecnologías y Herramientas
           </h2>
 
@@ -382,7 +406,7 @@ const Portfolio = () => {
           </div>
 
           {/* Card Horizontal de Tools */}
-          <div className="bg-white/5 rounded-2xl p-8 backdrop-blur-sm border border-white/10 hover:border-orange-400/50 transition-all duration-500 group">
+          <div className="bg-white/5 rounded-2xl p-8 backdrop-blur-sm border border-white/10 hover:border-teal-400/30 transition-all duration-500 group">
             <div className="text-center mb-8">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 mb-4 group-hover:scale-110 transition-transform duration-300">
                 <div className="text-white">
@@ -418,38 +442,38 @@ const Portfolio = () => {
       </section>
 
       {/****************************************** Proyectos ***********************************************/}
-      <section id="proyectos" className="py-10" style={{ scrollMarginTop: `${NAVBAR_HEIGHT}px` }}>
+       <section id="proyectos" className="py-10" style={{ scrollMarginTop: `${NAVBAR_HEIGHT}px` }}>
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">
             Proyectos Destacados
           </h2>
           <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-            <div className="bg-white/5 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 hover:border-orange-400/50 transition-all duration-300 hover:transform hover:scale-105">
-              <div className="h-48 bg-gradient-to-br from-orange-500/20 to-amber-500/20 flex items-center justify-center">
+            <div className="bg-white/5 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 hover:border-teal-400/50 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="h-48 bg-gradient-to-br from-teal-500/10 to-blue-500/10 flex items-center justify-center">
                 <img src="Portada Cecati.jpg" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3">CECATI 35</h3>
                 <p className="text-gray-400 mb-4">Este proyecto consiste en el desarrollo de un sistema web para la gestión de cursos e información sobre las especialidades del CECATI 35.</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-orange-400/20 text-orange-400 rounded-full text-sm">
+                  <span className="px-3 py-1 bg-teal-400/20 text-teal-400 rounded-full text-sm">
                     React
                   </span>
-                  <span className="px-3 py-1 bg-orange-400/20 text-orange-400 rounded-full text-sm">
+                  <span className="px-3 py-1 bg-teal-400/20 text-teal-400 rounded-full text-sm">
                     taildwind
                   </span>
-                  <span className="px-3 py-1 bg-orange-400/20 text-orange-400 rounded-full text-sm">
+                  <span className="px-3 py-1 bg-teal-400/20 text-teal-400 rounded-full text-sm">
                     NodeJS
                   </span>
-                  <span className="px-3 py-1 bg-orange-400/20 text-orange-400 rounded-full text-sm">
+                  <span className="px-3 py-1 bg-teal-400/20 text-teal-400 rounded-full text-sm">
                     Firebase
                   </span>
-                  <span className="px-3 py-1 bg-orange-400/20 text-orange-400 rounded-full text-sm">
+                  <span className="px-3 py-1 bg-teal-400/20 text-teal-400 rounded-full text-sm">
                     git
                   </span>
                 </div>
                 <div className="flex space-x-4">
-                  <a href='https://cecati35.edu.mx/' className="flex items-center text-orange-400 hover:text-orange-300 transition-colors">
+                  <a href='https://cecati35.edu.mx/' className="flex items-center text-teal-400 hover:text-teal-300 transition-colors">
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Link
                   </a>
@@ -464,10 +488,10 @@ const Portfolio = () => {
       {/* Contact Section */}
       <section id="contacto" className="py-10 bg-black/20" style={{ scrollMarginTop: `${NAVBAR_HEIGHT}px` }}>
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">
             Contacto
           </h2>
-          
+
           {/* Descripción */}
           <div className="text-center mb-16">
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -477,15 +501,15 @@ const Portfolio = () => {
 
           {/* Grid de contacto */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            
+
             {/* Correo */}
             <div className="group text-center">
-              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110">
+              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110">
                 <Mail className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Correo:</h3>
-              <a 
-                href="mailto:leonardo.segl7@gmail.com" 
+              <a
+                href="mailto:leonardo.segl7@gmail.com"
                 className="text-blue-400 hover:text-blue-300 transition-colors duration-300 break-all"
               >
                 leonardo.segl7@gmail.com
@@ -498,9 +522,9 @@ const Portfolio = () => {
                 <Phone className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">WhatsApp:</h3>
-              <a 
-                href="https://wa.me/4431693072" 
-                target="_blank" 
+              <a
+                href="https://wa.me/4431693072"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-green-400 hover:text-green-300 transition-colors duration-300"
               >
@@ -514,9 +538,9 @@ const Portfolio = () => {
                 <Linkedin className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">LinkedIn:</h3>
-              <a 
-                href="https://linkedin.com/in/leonardo-serrato-4a8759373" 
-                target="_blank" 
+              <a
+                href="https://linkedin.com/in/leonardo-serrato-4a8759373"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:text-blue-300 transition-colors duration-300"
               >
